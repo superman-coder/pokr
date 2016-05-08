@@ -1,0 +1,60 @@
+/* class using for all widget */
+.widget__block {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-right: 2px;
+}
+
+@mixin widget__header($image) {
+	font-weight: 700;									// title should be bold\
+	background: url($image) no-repeat;
+	background-position: 0 center;
+	background-size: 11px 11px;
+	opacity: 0.6;
+	padding: 3px 8px 4px 17px; 							// top right bottom left
+	border-bottom: 1px solid #000;						// underline
+	margin-bottom: 5px;									// margin with widget content
+}
+
+
+
+/////////////////////////////
+//// Widget Books Tag  /////
+////////////////////////////
+
+.widget__tags {
+}
+
+.widget-tag__header {
+	@include widget__header("../images/tag.svg");
+}
+
+.widget-tag__wrapper {
+
+}
+
+////////////////////////////////
+///// Widget Book Details //////
+////////////////////////////////
+
+.widget__detail {
+
+}
+
+.widget-detail__header {
+	@include widget__header("../images/statistic.svg");
+}
+
+.widget-detail__attribute {
+	margin-bottom: 3px;
+	overflow: hidden;		/* clear float fo .widget-detail__name and .widget-detail__value so .widget-detail__attribute can be spanned all children */
+}
+
+.widget-detail__name {
+	float: left;
+}
+
+.widget-detail__value {
+	float: right;
+}
+

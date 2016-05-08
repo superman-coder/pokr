@@ -1,0 +1,12 @@
+{
+  "name": "sass-project",
+  "version": "0.1.0",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-sass": "^0.18.1"
+  },
+  
+  "devDependencies": {
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

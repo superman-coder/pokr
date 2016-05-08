@@ -1,0 +1,174 @@
+@import "../utilities/variables"; 
+$avatar-width: 32px;
+$avatar-height: 32px;
+
+.page-head {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: $nav-height;
+	width: 100%;
+	font-size: 14px;
+	color: #fff;
+	z-index: 1;
+}
+
+.page-head__wrapper {
+	@include display(flex);
+	@include flex-direction(row);	// flex + row = inline block
+	width: $width-wrapper;
+	margin: 0 auto;		
+	/* center horizontally. apply for block level element */
+	border-bottom: 1px solid #ddd; 
+	/* drop shadow effect */
+	box-shadow: 0 3px 5px -3px rgba(200, 200, 200, 0.3);
+	height: $nav-height;
+	z-index: 1;
+}
+
+
+.logo {
+	width: 100px;
+	height: 40px;
+	margin-right: 10px;
+	margin-left: 24px;
+	background: grey;
+}
+
+.form-search {
+	width: 350px;
+	padding-top: 3px;
+	border-bottom: 1px red;
+	margin: 0;
+	height: 27px;
+	background: url(../images/search.png) no-repeat 8px center;
+	background-size: 13px 13px;
+}
+
+.search-box {
+	border: 0;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 0;
+	padding: 5px;
+	padding-left: 26px;
+	float: none;
+	width: 100%;
+	height: 27px;
+	font-size: 15px;
+	line-height: normal;
+	background: #eee;
+}
+
+.site-nav {
+	@include display(flex);
+	@include flex-direction(row); 	// flex + row ~= inline block
+	z-index: 1;
+	margin-left: 40px;
+	float: right;
+	vertical-align: middle;
+}
+
+.site-nav__item {
+	cusor: pointer;
+	height: $nav-height;
+	color: #666;
+	padding: 0px 16px;
+	padding-left: 24px;
+	background: url(../images/notifications.svg) no-repeat;
+	background-size: 16px 16px;
+
+	&:hover {
+		background: grey;
+	}
+
+}
+
+.site-nav__item--home {
+	@extend .site-nav__item;
+}
+
+.site-nav__item--notif {
+	@extend .site-nav__item;
+}
+
+.site-nav__item--profile {
+	@extend .site-nav__item;
+}
+
+
+.site-nav__button {
+	cursor: pointer;
+	font-weight: 500;
+	transition: color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
+	background: url(../images/notifications.svg) no-repeat;
+	background-size:contain;
+	background-size: 16px 16px;
+	outline: 0;
+	border-radius: 3px;
+	text-align: center;
+	background: #2b6dad;
+	color: #fff;
+	font-size: 13px;
+	padding: 6px 6px 6px 30px;
+	margin: 7px 10px 10px 10px;
+	border: 1px solid #4f5863;
+	line-height: normal;
+	text-decoration: none;
+
+	&:hover {
+
+	}
+}
+
+.site-nav__avatar {
+	vertical-align: middle;
+	text-decoration: none;
+	cursor: pointer;
+
+	.avatar__username {
+		display: inline-block;
+		vertical-align: middle;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.avatar__image--circle {
+		background-image: url(../images/avatar.jpg);
+		/* make a square container */
+		width: $avatar-width;
+		height: $avatar-height;
+
+		/* fill the container. preserving aspec ratio. and cropping to fit */
+		background-size: cover;
+
+		/* center the image vertically and horizontally */
+		background-position: center;
+
+		/* rounded the edge to the circle with border radius 1/2 container size */
+		border-radius: 50%;
+
+		/* same line with avatar username */
+		display: inline-block;
+	}
+
+	.avatar__image--square {
+		background-image: url(../images/avatar.jpg);
+		/*  size of the container */
+		width: $avatar-width;
+		height: $avatar-height;
+
+		/* fill the container. preserving aspec ratio. and cropping to fit */
+		background-size: cover;
+
+		/* center the image vertically and horizontally */
+		background-position: center;
+
+		/* same line with avatar username */
+		display: inline-block;
+
+		vertical-align: middle;
+	}
+}
+

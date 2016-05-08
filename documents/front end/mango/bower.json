@@ -1,0 +1,6 @@
+{
+  "name": "mango-bower",
+  "dependencies": {
+    "bourbon": "~4.2.3"
+  }
+}

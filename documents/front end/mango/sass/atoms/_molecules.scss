@@ -1,0 +1,105 @@
+////////////////////////////////////
+///////// MOLECULES ///////////////
+///////////////////////////////////
+
+/**********************************
+ * Define all elements resuable ***
+ * through out pages of project ***
+ * ********************************/
+
+
+///////////////////////////////////////
+/////////// Book Tag //////////////////
+///////////////////////////////////////
+.tag {
+	border: solid 1px #e5e5e5;
+	padding: 3px 8px 3px 20px;
+	font-size: 11px;
+	border-radius: 5px;
+	line-height: 26px;
+	background: url("../images/circle.png") no-repeat;
+	background-color: #ececec;
+	color: #666666;
+	background-position: 5px center;
+	text-decoration: none;
+}
+
+////////////////////////////////////////////
+///////////// Avatar Image /////////////////
+////////////////////////////////////////////
+.avatar__image--circle {
+	background-image: url(../images/avatar.jpg);
+	/* make a square container */
+	width: 32px;
+	height: 32px;
+
+	/* fill the container. preserving aspec ratio. and cropping to fit */
+	background-size: cover;
+
+	/* center the image vertically and horizontally */
+	background-position: center;
+
+	/* rounded the edge to the circle with border radius 1/2 container size */
+	border-radius: 50%;
+
+	/* same line with avatar username */
+	display: inline-block;
+}
+
+.avatar__image--square {
+	background-image: url(../images/avatar.jpg);
+	/*  size of the container */
+	width: 32px;
+	height: 32px;
+
+	/* fill the container. preserving aspec ratio. and cropping to fit */
+	background-size: cover;
+
+	/* center the image vertically and horizontally */
+	background-position: center;
+
+	/* same line with avatar username */
+	display: inline-block;
+
+	vertical-align: middle;
+}
+
+
+//////////////////////////////////////////
+/////////// Answer Box ///////////////////
+//////////////////////////////////////////
+
+.answer-box {
+	background-color: #f6f6f6;
+	width: 500px;
+	height: 100px;
+	border: solid 1px #e5e5e5;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.answer-box__header {
+	@include display(flex);
+	margin-left: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.answer-box__username {
+	margin-left: 10px;
+}
+
+.answer-box__input {
+	background-color: #fff;
+	border-radius: solid 2px #e5e5e5;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 4px;
+	height: 20px;
+	padding: 8px;
+	vertical-align: middle;
+	font-style: italic;
+
+}
+

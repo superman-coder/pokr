@@ -1,0 +1,30 @@
+$left-nav-width: 145px;
+$right-nav-width: 145px;
+
+.content__wrapper {
+	width: 1020px;
+	margin: 0 auto;
+	/* padding top 70px because header is fixed layout */
+	padding: 70px 10px 0;
+}
+
+.left-nav {
+	width: $left-nav-width;
+	float: left;
+	min-height: 2px;
+}
+
+.right-nav {
+	width: $right-nav-width;
+	float: right;
+	min-height: 2px;
+}
+
+.main-content {
+	margin-left: $left-nav-width;
+	margin-right: $right-nav-width;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 400px;
+	padding-top: 45px;
+}

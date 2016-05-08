@@ -1,0 +1,103 @@
+$book-margin: 40px;
+$book-width: ($width-wrapper - $book-margin * 2) / 3 - 1;
+
+.page-foot {
+	float: left;
+	position: relative;
+	border-top: 1px solid #eee;
+	background: #f6f6f6;
+	width: 100%;
+	min-width: 1020px;
+	height: 420px;
+}
+
+.page-foot__wrapper {
+	width: $width-wrapper;
+	margin: 0 auto;
+}
+
+.footer__title {
+	font-size: 18px;
+	margin-top: 32px;
+	color: #276CAF;
+}
+
+/* wrap for all book items. using flex for all books on same line (instead of using inlinne-blocks) */
+.footer-book-items__wrapper {
+	margin-top: 20px;
+	display: flex;
+}
+
+.footer__item {
+	@include display(flex);				// using for footer-book__end scale rest of space
+	@include flex-direction(column);
+	background-color: #fff;
+	height: 310px;
+	margin-right: $book-margin;
+	width: $book-width;
+
+	/* when mouse hover a book item. will have a shadow box cover outside. content inside will be blur */
+	&:hover {
+		 box-shadow: 0 0 5px 0 rgba(200,200,200,0.3);
+		 background: rgba(255,255,255,0.5);
+	}
+}
+
+/* extend directly from footer__item, but remove margin-right. (because this is the right most, we don't need anymore */
+.footer__item--right {
+	@extend .footer__item;
+	margin-right: 0;
+}
+
+.footer-book__title {
+	margin-top: 16px;
+	margin-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.footer-book__body {
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 200px;	
+	overflow: hidden;		/* clear float fo .book__image so footer-book__body can scale out all of children */
+}
+
+.footer-book__image {
+	float: left;
+	height: 100%;
+	// center veritcally using flex method. 
+	// ref: https://css-tricks.com/centering-css-complete-guide/
+	@include display(flex);
+  	@include justify-content(center);		// center in line (another attributes are flex-start, flex-end, space-between, space-arrount ...)
+  	@include flex-direction(column);		// direction of this flex flow is vertical. So combine with above attribute we can center vertically !!!
+
+	img {
+		width: 120px;
+		height: 170px;
+	}
+}
+
+.footer-book__quote {
+	// center veritcally using flex method. 
+	// ref: https://css-tricks.com/centering-css-complete-guide/
+	@include display(flex);
+  	@include justify-content(center);		// center in line (another attributes are flex-start, flex-end, space-between, space-arrount ...)
+  	@include flex-direction(column);		// direction of this flex flow is vertical. So combine with above attribute we can center vertically !!!
+  	height: 100%;
+
+	overflow: hidden; 						// for dividing two column with .book__image 
+	padding-left: 10px;						// no padding-right because footer--book__body has right-margin 
+	padding-bottom: 3px;
+	font-style: italic;
+	font-size: 13px;
+}
+
+.footer-book__end {
+	background: #eeeeee;
+	width: 100%;
+	height: 100%;
+	@include flex(1);						// grow rest of space of parent (.footer__item)
+}
+

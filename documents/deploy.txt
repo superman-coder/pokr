@@ -1,0 +1,21 @@
+Mongoclient:
+-----------------
+1. Using RoboMongo: https://robomongo.org/
+2. First start: create a database named "Pokr"
+
+Deploy MongoDB local:
+------------------------
+1. Install MongoDB:
+brew install mongodb && mongod
+2. create /data/db for first time running:
+su mkdir -p /data/db
+3.start running mongodb server:
+mongod
+4. Using Mongo client fo querying data if need:
+mongo
+
+Deploy server:
+--------------------------
+Go to server directory:
+node app.js
+

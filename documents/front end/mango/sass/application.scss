@@ -1,0 +1,35 @@
+/* Application.css. 
+ * Using to config scss project
+*/
+
+
+// 
+// @Normalize
+//
+@import "utilities/reset";     
+
+
+//
+// @Third-party library
+//
+@import "vendor/pace_flash";
+@import "vendor/pace";
+@import "bourbon";
+
+//
+// @Atoms
+//
+@import "atoms/atoms";
+@import "atoms/molecules";
+
+// 
+// @Modules
+//
+@import "modules/layout";
+@import "modules/header";
+@import "modules/widget";
+@import "modules/detail";
+@import "modules/list";
+@import "modules/profile";
+@import "modules/footer";
+
