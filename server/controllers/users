@@ -1,0 +1,67 @@
+'use strict';
+
+
+/** module dependencies */
+
+const mongoose = require('mongoose');
+const wrap = require('co-express');
+const User = mongoose.model('User');
+
+/** export module */
+
+exports.signin = function () {
+};
+
+/**
+ * Auth callback
+ */
+
+exports.authCallback = login;
+
+/**
+ * Show login form
+ */
+
+exports.login = function (req, res) {
+    res.render('users/login', {
+        title: 'Login'
+    });
+};
+
+/**
+ * Show sign up form
+ */
+
+exports.signup = function (req, res) {
+    res.render('users/signup', {
+        title: 'Sign up',
+        user: new User()
+    });
+};
+
+/**
+ * Logout
+ */
+
+exports.logout = function (req, res) {
+    req.logout();
+    res.redirect('/login');
+};
+
+/**
+ * Session
+ */
+
+exports.session = login;
+
+/**
+ * Login
+ */
+
+function login(req, res) {
+    const redirectTo = req.session.returnTo
+        ? req.session.returnTo
+        : '/';
+    delete req.session.returnTo;
+    res.redirect(redirectTo);
+}
