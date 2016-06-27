@@ -1,33 +1,41 @@
-{% extends 'auth.html' %}
+{% extends '../layouts/default.html' %}
 
-{% block auth %}
-  <form action="/users/session" method="post" role="form" class="form-horizontal">
+{% block content_header %}
+  <h1>{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="login__social">
+     <a href="/auth/facebook">
+        <img src="/img/facebook.png" alt="facebook auth" height="70" width="70">
+      </a>
+     <a href="/auth/google">
+        <img src="/img/google.png" alt="google auth" height="70" width="70">
+      </a>
+     <br>
+      <h3>OR</h3>
+     <br>
+</div>
+
+<div class="login__manual">
+  <form action="/users/session" method="post" role="form">
     <input type="hidden" name="_csrf" value="{{ csrf_token }}">
 
-    <p class="col-sm-offset-2 error">
-      {{ message }}
-    </p>
+    <p class="message">{{ message }} </p>
 
-    <div class="form-group">
-      <label for="email" class="col-sm-2 control-label">Email</label>
-      <div class="col-sm-10">
-        <input id="email" class="form-control" type="email" placeholder="Email" name="email">
-      </div>
-    </div>
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Email" name="email">
 
-    <div class="form-group">
-      <label for="password" class="col-sm-2 control-label">Password</label>
-      <div class="col-sm-10">
-        <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-      </div>
-    </div>
+    <label for="password">Password</label>
+    <input id="password" type="password" placeholder="Password" name="password">
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button class="btn btn-primary" type="submit">Log in</button>
-        &nbsp; or &nbsp;
-        <a href="/signup" class="show-signup">Sign up</a>
-      </div>
-    </div>
+    <button type="submit">Log in</button>
+    &nbsp; or &nbsp;
+    <a href="/signup" class="show-signup">Sign up</a>
+
   </form>
+</div>
 {% endblock %}
+
+

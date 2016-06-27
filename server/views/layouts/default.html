@@ -1,19 +1,30 @@
+<!-- all meta data. stylesheets. -->
   {% include '../includes/head.html' %}
 
   <body>
+    <!-- page header like navigation bar ... -->
     {% include '../includes/header.html' %}
+
     <div class="container">
-      <div class="page-header">
-        {% block main %}{% endblock %}
+      <!-- content header -->
+      <div class="content-header">
+        {% block content_header %}{% endblock %}
       </div>
+
       <div class="messages">
         {% include '../includes/messages.html' %}
       </div>
+
+      <!-- main content -->
       <div class="content">
         {% block content %}{% endblock %}
       </div>
     </div>
+
+    <!-- all javascript libraries -->
     {% include '../includes/footer.html' %}
+
+    <!-- javascript code after libraries -->
     {% include '../includes/foot.html' %}
   </body>
 </html>

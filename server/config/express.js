@@ -49,7 +49,7 @@ module.exports = function (app, passport) {
     // Logging middleware
     if (env !== 'test') app.use(morgan(log));
 
-    // Swig templating engine settings
+    // Swig template engine settings
     if (env === 'development' || env === 'test') {
         swig.setDefaults({
             cache: false
@@ -61,7 +61,7 @@ module.exports = function (app, passport) {
     app.set('views', config.root + '/views');
     app.set('view engine', 'html');
 
-    // expose package.json to views
+    // expose package.json and environment to views (why ?!)
     app.use(function (req, res, next) {
         res.locals.pkg = pkg;
         res.locals.env = env;

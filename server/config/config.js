@@ -17,7 +17,7 @@ const notifier = {
 };
 
 const defaults = {
-    root: path.join(__dirname, '..'),
+    root: path.join(__dirname, '..')
 //    notifier: notifier
 };
 
@@ -29,13 +29,14 @@ module.exports = {
 
 
 module.exports.facebook = {
-    clientID: "abc",
-    clientSecret: "abc",
-    callbackURL: "abc"
+    clientID: "1721549544801336",
+    clientSecret: "3de7d7e48503d4b738668699e7b87c5b",
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
 };
 
+// currently is Pakr project
 module.exports.google = {
-    clientID: "abc",
-    clientSecret: "abc",
-    callbackURL: "abc"
+    clientID: "803921065829-ukp14bumdkqg244k5omrbqv1jor6c4nn.apps.googleusercontent.com",
+    clientSecret: "BI0lFmQ_8ahh139WhUUFveh-",
+    callbackURL: "http://localhost:3000/auth/google/callback"
 };

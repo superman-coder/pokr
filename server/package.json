@@ -20,6 +20,7 @@
     "connect-mongo": "^1.1.0",
     "cookie-parser": "^1.4.1",
     "cookie-session": "^2.0.0-alpha.1",
+    "crypto": "0.0.3",
     "csurf": "^1.8.3",
     "elasticsearchclient": "^0.5.3",
     "express": "^4.13.4",

@@ -16,12 +16,14 @@ fs.readdirSync(models)
     .filter(file => ~file.search(/^[^\.].*\.js$/))
     .forEach(file => require(join(models, file)));
 
-// Bootstrap routes
+// configure passport for authentication
 require('./config/passport')(passport);
+// configure express (middleware, pre-process request or response)
 require('./config/express')(app, passport);
+// add route handler to last middleware
 require('./config/routes')(app, passport);
 
-// connect to database before start server
+// connect to MongoDB
 connect()
     .on('error', console.log)
     .on('disconnected', connect)
@@ -35,7 +37,9 @@ function listen () {
 
 function connect () {
     var options = { server: { socketOptions: { keepAlive: 1 } } };
-    return mongoose.connect(config.db, options).connection;
+    var connection =  mongoose.connect(config.db, options).connection;
+    console.log("connection: " + connection);
+    return connection;
 }
 
 //mongoose.connect('mongodb://localhost:27017/pokr', function(err) {
